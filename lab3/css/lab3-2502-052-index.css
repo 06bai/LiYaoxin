@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+    padding-top: 80px; /* 给固定头部留出空间 */
+}
+
+/* 头部 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+    display: flex; /* 弹性布局，解决logo和导航排版 */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    background-image: url("../img/logo.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.nav {
+    height: 80px;
+    line-height: 80px;
+}
+
+.nav-item {
+    display: inline-block; /* 替换float，避免高度塌陷 */
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    color: #f40;
+}
+
+/* 登录弹窗：父相子绝 */
+.login-wrap {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.login-box {
+    position: relative;
+    width: 300px;
+    background: white;
+    margin: 100px auto;
+    padding: 20px;
+}
+.close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 表单 */
+form {
+    text-align: center;
+}
+input {
+    margin: 5px 0;
+}
+.hide {
+    display: none;
+}
+
+
+/* 容器 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex; /* 弹性布局，统一左/中/右排版 */
+    gap: 20px; /* 列之间的间距 */
+}
+
+/* 左侧栏 */
+.left {
+    width: 200px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* 防止被压缩 */
+}
+
+.title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.link-item {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.link-item:hover {
+    color: #f40;
+}
+
+/* 中间 */
+.main-content {
+    flex: 1; /* 占满剩余空间（替代固定宽度，适配性更好） */
+    min-width: 700px; /* 保留最小宽度 */
+}
+
+/* 大图 hover 效果 */
+.hover-box {
+    width: 100%;
+    height: 300px;
+    background-image: url("../img/datu.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 300px;
+    font-size: 18px;
+    color: transparent;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s; /* 过渡动画更丝滑 */
+}
+
+.hover-box:hover {
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: darken;
+    color: #fff;
+}
+
+/* 热门推荐 */
+.hot-recommend {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.book-list {
+    display: flex; /* 弹性布局，替代float */
+    flex-wrap: wrap;
+}
+
+.book-item {
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.book-item:nth-child(1) .item-img {
+    background-image: url("../img/s11114362.jpg");
+}
+.book-item:nth-child(2) .item-img {
+    background-image: url("../img/s11329547.jpg");
+}
+.book-item:nth-child(3) .item-img {
+    background-image: url("../img/s26676928.jpg");
+}
+.book-item:nth-child(4) .item-img {
+    background-image: url("../img/s28351121.jpg");
+}
+
+.item-img {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+/* 新书 table */
+.new-book {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.new-book table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.new-book th,
+.new-book td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.new-book th {
+    background: #f5f5f5;
+}
+
+.new-book tr:hover {
+    background: #fafafa;
+}
+
+/* 右侧栏 */
+.right {
+    width: 220px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* 防止被压缩 */
+}
+
+.promo-item {
+    margin: 15px 0;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.promo-item:nth-child(2) .promo-img { /* 修正nth-child序号（title是第一个子元素） */
+    background-image: url("../img/s3045868.jpg");
+}
+.promo-item:nth-child(3) .promo-img {
+    background-image: url("../img/s3328590.jpg");
+}
+
+.promo-img {
+    width: 100%;
+    height: 200px;        /* 图片高度 */
+    background-size: 100% 100%; /* 完全展开图片，不裁剪 */
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+/* 页脚 */
+.footer {
+    margin-top: 30px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    width: 100%;
+}
